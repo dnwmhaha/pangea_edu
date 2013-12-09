@@ -12,7 +12,12 @@ describe "Static pages" do
 
    it "should have the title 'Pangea Physics - Everything is connected'" do
       visit '/static_pages/home'
-      expect(page).to have_title("Pangea Physics - Everything is connected")
+      expect(page).to have_title("Pangea Physics")
+    end
+
+    it "should not have a custom page title" do
+      visit '/static_pages/home'
+      expect(page).not_to have_title(' - Everything is connected')
     end
   end
   
